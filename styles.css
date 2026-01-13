@@ -224,6 +224,8 @@ body {
 .hero-container-wrapper .paragraph:nth-child(11) { animation-delay: 0.55s; }
 .hero-container-wrapper .paragraph:nth-child(12) { animation-delay: 0.6s; }
 .hero-container-wrapper .paragraph:nth-child(13) { animation-delay: 0.65s; }
+.hero-container-wrapper .paragraph:nth-child(14) { animation-delay: 0.7s; }
+.hero-container-wrapper .paragraph:nth-child(15) { animation-delay: 0.75s; }
 
 /* Responsive */
 @media (max-width: 1024px) {
