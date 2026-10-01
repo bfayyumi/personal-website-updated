@@ -133,6 +133,10 @@ body {
     opacity: 0.7;
 }
 
+.book-title {
+    font-style: italic;
+}
+
 /* Divider */
 .divider-container {
     width: 100%;
