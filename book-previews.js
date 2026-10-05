@@ -45,6 +45,7 @@
         active = null;
         preview.classList.remove('is-visible');
         preview.setAttribute('aria-hidden', 'true');
+        preview.hidden = true;
     }
 
     async function show(trigger) {
@@ -69,6 +70,7 @@
         }
         // A fast move between titles must never reveal a stale cover.
         if (currentRevision !== revision) return;
+        preview.hidden = false;
         positionPreview();
         trigger.setAttribute('aria-expanded', 'true');
         preview.setAttribute('aria-hidden', 'false');
