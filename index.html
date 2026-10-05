@@ -6,6 +6,7 @@
     <title>Bader Fayyumi</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="styles.css">
+    <script src="book-previews.js" defer></script>
 </head>
 <body>
     <nav class="nav-container">
@@ -41,7 +42,7 @@
 
                     <p class="paragraph fadeInUp">Now I’m 21 and building <a href="https://getaurify.com" target="_blank" rel="noopener noreferrer">Aurify</a>.</p>
 
-                    <p class="paragraph fadeInUp">I also read a lot. A few works that shaped how I think are Plato’s <cite class="book-title">The Republic</cite>, including the <cite class="book-title">Allegory of the Cave</cite>, Dante’s <cite class="book-title">Divine Comedy</cite>, Milton’s <cite class="book-title">Paradise Lost</cite>, and Marcus Aurelius’s <cite class="book-title">Meditations</cite>.</p>
+                    <p class="paragraph fadeInUp">I also read a lot. A few works that shaped how I think are Plato’s <cite class="book-title"><button class="book-trigger" type="button" data-book="republic" aria-label="Preview The Republic" aria-controls="book-preview" aria-expanded="false">The Republic</button></cite>, including the <cite class="book-title"><button class="book-trigger" type="button" data-book="cave" aria-label="Preview Allegory of the Cave" aria-controls="book-preview" aria-expanded="false">Allegory of the Cave</button></cite>, Dante’s <cite class="book-title"><button class="book-trigger" type="button" data-book="divine-comedy" aria-label="Preview Divine Comedy" aria-controls="book-preview" aria-expanded="false">Divine Comedy</button></cite>, Milton’s <cite class="book-title"><button class="book-trigger" type="button" data-book="paradise-lost" aria-label="Preview Paradise Lost" aria-controls="book-preview" aria-expanded="false">Paradise Lost</button></cite>, and Marcus Aurelius’s <cite class="book-title"><button class="book-trigger" type="button" data-book="meditations" aria-label="Preview Meditations" aria-controls="book-preview" aria-expanded="false">Meditations</button></cite>.</p>
 
                     <p class="paragraph fadeInUp">~B</p>
                 </div>
@@ -62,5 +63,9 @@
             </div>
         </div>
     </main>
+    <figure class="book-preview" id="book-preview" aria-hidden="true">
+        <img class="book-preview-image" alt="" width="180" height="270">
+        <figcaption class="book-preview-caption"></figcaption>
+    </figure>
 </body>
 </html>

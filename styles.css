@@ -137,6 +137,85 @@ body {
     font-style: italic;
 }
 
+.book-trigger {
+    appearance: none;
+    border: 0;
+    padding: 0;
+    background: none;
+    color: inherit;
+    font: inherit;
+    text-align: inherit;
+    cursor: pointer;
+    text-decoration: underline dotted;
+    text-decoration-color: #b6b6b6;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.book-trigger:hover,
+.book-trigger[aria-expanded="true"] {
+    text-decoration-color: currentColor;
+}
+
+.book-trigger:focus-visible {
+    outline: 2px solid var(--active-color);
+    outline-offset: 4px;
+    border-radius: 2px;
+}
+
+.book-preview {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1100;
+    width: 180px;
+    max-width: calc(100vw - 32px);
+    padding: 0;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 12px 36px rgb(0 0 0 / 14%), 0 2px 8px rgb(0 0 0 / 5%);
+    overflow: hidden;
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(6px) scale(.98);
+    transition: opacity .18s ease, transform .22s cubic-bezier(.2, .7, .2, 1), visibility .18s;
+}
+
+.book-preview.is-visible {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.book-preview.is-illustration {
+    width: 240px;
+}
+
+.book-preview-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: min(270px, calc(100vh - 76px));
+    object-fit: contain;
+}
+
+.book-preview-caption {
+    padding: 10px 12px;
+    color: #666;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .book-preview {
+        transition: none;
+        transform: none;
+    }
+}
+
 /* Divider */
 .divider-container {
     width: 100%;
