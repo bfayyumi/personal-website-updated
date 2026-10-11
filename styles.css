@@ -72,6 +72,49 @@ body {
     opacity: 1;
 }
 
+/* Pointing hand, after Michelangelo's Creation of Adam. Desktop only; phones keep the dot. */
+.nav-hand {
+    display: none;
+}
+
+@media (min-width: 1025px) {
+    .nav-hand {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: calc(100% - 2px);
+        width: 64px;
+        height: auto;
+        pointer-events: none;
+        user-select: none;
+        /* Matches where nav-hand.js places it, so the first paint is already in position. */
+        transform: translate3d(0, calc(1.9px + var(--hand-row, 0) * 28px), 0);
+        view-transition-name: nav-hand;
+    }
+
+    .nav-container .active-indicator {
+        display: none;
+    }
+}
+
+/* Smooth page changes; the hand morphs from one link to the other. */
+@view-transition {
+    navigation: auto;
+}
+
+::view-transition-group(nav-hand) {
+    animation-duration: .5s;
+    animation-timing-function: cubic-bezier(.2, .7, .2, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    ::view-transition-group(*),
+    ::view-transition-old(*),
+    ::view-transition-new(*) {
+        animation: none !important;
+    }
+}
+
 /* Main Content */
 .home {
     padding: 80px;
@@ -260,6 +303,56 @@ body {
     font-size: 14px;
     line-height: 20px;
     color: var(--text-secondary);
+}
+
+/* Creation of Adam: the hands close the gap as you reach the end of the page. */
+.reach {
+    --reach: 0;
+    margin-top: 48px;
+}
+
+.reach-stage {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    aspect-ratio: 1120 / 400;
+    isolation: isolate;
+}
+
+.reach-stage img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: auto;
+    pointer-events: none;
+    user-select: none;
+    will-change: transform;
+}
+
+/* Each layer is half the fresco; plus-lighter adds them back into one seamless painting. */
+.reach-adam {
+    transform: translate3d(calc((1 - var(--reach)) * -5.4%), 0, 0);
+}
+
+.reach-god {
+    mix-blend-mode: plus-lighter;
+    transform: translate3d(calc((1 - var(--reach)) * 5.4%), 0, 0);
+}
+
+.reach figcaption {
+    margin-top: 16px;
+    color: var(--text-secondary);
+    font-size: 12.5px;
+    line-height: 18px;
+    text-align: center;
+}
+
+.reach figcaption cite {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 14.5px;
+    font-style: italic;
+    font-weight: 400;
 }
 
 /* Social Row */
