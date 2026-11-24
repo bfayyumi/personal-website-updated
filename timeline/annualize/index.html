@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annualize white paper - Bader Fayyumi</title>
+    <meta name="description" content="The white paper for Annualize, buy now, pay later for annual software plans: the problem, the business model, the market, the competition and the vision. Last updated May 7, 2025.">
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@1&display=swap">
+    <link rel="stylesheet" href="../../styles.css?v=20261124-7">
+    <script src="../../nav-hand.js?v=20261124-6" defer></script>
+    <script>
+        // Hide the first screen before first paint so write-in.js can write it in; without it everything simply shows.
+        if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            document.documentElement.classList.add('write-in');
+        }
+    </script>
+    <script src="../../write-in.js?v=20261124-7" defer></script>
+    <script>
+        // Visits from another page of the site write in faster, and a page loaded ahead of time waits to animate until it's shown.
+        (() => {
+            const root = document.documentElement;
+            try {
+                if (document.referrer && new URL(document.referrer).origin === location.origin) root.classList.add('from-site');
+            } catch {}
+            if (document.prerendering) {
+                root.classList.add('is-prerendering');
+                document.addEventListener('prerenderingchange', () => root.classList.remove('is-prerendering'), { once: true });
+            }
+        })();
+    </script>
+    <!-- Load the other pages as soon as the visitor points at them in the nav, so switching is instant. -->
+    <script type="speculationrules">
+    {
+        "prefetch": [{ "where": { "selector_matches": ".nav-container a" }, "eagerness": "eager" }],
+        "prerender": [{ "where": { "selector_matches": ".nav-container a" }, "eagerness": "moderate" }]
+    }
+    </script>
+</head>
+<body>
+    <nav class="nav-container">
+        <img class="nav-hand" src="../../assets/hand.webp" alt="" aria-hidden="true" width="64" height="42" style="--hand-row: 2">
+        <a href="/" class="nav-item-row">
+            <span class="nav-link">Home</span>
+        </a>
+        <a href="/thoughts/" class="nav-item-row">
+            <span class="nav-link">Thoughts</span>
+        </a>
+        <a href="/timeline/" class="nav-item-row">
+            <span class="active-indicator"></span>
+            <span class="nav-link active">Timeline</span>
+        </a>
+    </nav>
+
+    <main class="home">
+        <div class="section">
+            <div class="container">
+                <div class="hero-container">
+                    <h1 class="title">Annualize white paper</h1>
+                    <p class="paragraph text-secondary">Last updated May 7, 2025</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider-container">
+            <div class="divider-line"></div>
+        </div>
+
+        <div class="section">
+            <div class="container">
+                <article class="paper">
+                    <p class="paragraph">We wrote this while building <a href="/timeline/#annualize">Annualize</a> in 2025. It’s the full white paper as we left it, with only the typos fixed. You can also read <a href="../../assets/annualize/white-paper.pdf" target="_blank" rel="noopener">the original PDF</a>.</p>
+
+                    <blockquote class="paper-quote">The “Klarna” for annual software subscriptions.</blockquote>
+
+                    <div class="entry-break" aria-hidden="true"><span></span><span></span><span></span></div>
+
+                    <section class="paper-part" id="introduction" aria-labelledby="introduction-label">
+                        <p class="paper-label" id="introduction-label">Introduction</p>
+
+                        <h2 id="the-problem">The problem</h2>
+                        <p class="paragraph">Small and medium-sized businesses (SMBs) often struggle with the upfront costs of annual software subscriptions, even though these plans offer 15–40% discounts. Many SMBs can’t afford to pay a large sum all at once, so they choose monthly plans instead. This decision costs them up to 15–40% more each year, hurting their bottom line.</p>
+                        <p class="paragraph">At the same time, SaaS vendors lose out too—monthly subscribers churn at <strong>4.5×</strong> the rate of annual ones, shrinking their annual recurring revenue (ARR).</p>
+                        <p class="paragraph">The result: SMBs overspend, software vendors lose stable income, and billions of dollars in savings and sales never materialize, creating a big market problem that needs exploiting.</p>
+
+                        <h2 id="the-solution">The solution</h2>
+                        <p class="paragraph">For small and medium-sized businesses (SMBs) struggling with the high upfront costs of annual SaaS subscriptions, and for SaaS vendors facing higher churn rates due to customers opting for more expensive monthly plans, there’s a clear need for a solution that benefits both parties. Annualize addresses this challenge with an innovative approach.</p>
+                        <p class="paragraph"><em>Annualize</em> introduces a <strong>Buy Now, Pay Later (BNPL)</strong> solution designed specifically for annual software plans. This model allows SMBs to commit to annual subscriptions—typically discounted by <strong>15–40%</strong> compared to monthly billing—without the burden of paying the full amount upfront. Instead, SMBs can spread the cost over <strong>12 monthly installments</strong>, making it easier to access the savings of annual plans without straining their cash flow.</p>
+
+                        <h3>Benefits for SMBs</h3>
+                        <ul class="paper-list">
+                            <li><strong>Cost savings:</strong> By opting for annual plans through Annualize, SMBs can save up to <strong>40% annually</strong> compared to traditional monthly subscriptions.</li>
+                            <li><strong>Improved cash flow:</strong> Monthly installments eliminate the financial hurdle of a large upfront payment, making premium software tools more accessible.</li>
+                        </ul>
+
+                        <h3>Benefits for vendors</h3>
+                        <ul class="paper-list">
+                            <li><strong>Reduced churn:</strong> With more customers choosing annual plans over month-to-month options, vendors can see churn rates drop by as much as <strong>4.5 times</strong>.</li>
+                            <li><strong>Increased annual recurring revenue (ARR):</strong> Encouraging annual commitments boosts predictable revenue streams for SaaS providers.</li>
+                        </ul>
+
+                        <h2 id="business-model">The business model</h2>
+                        <p class="paragraph">The <em>Annualize</em> business model is designed to make life easier for small and medium-sized businesses (SMBs) and software-as-a-service (SaaS) vendors. It’s a win-win setup that lets SMBs afford annual software plans without paying everything upfront, while vendors get more customers locked into yearly subscriptions.</p>
+
+                        <h3>How it works: the key players</h3>
+                        <h4>For SMBs <span class="text-secondary">(the buyers)</span></h4>
+                        <ul class="paper-list">
+                            <li><strong>What they pay upfront:</strong> SMBs pay 20–35% of the annual subscription cost right away.</li>
+                            <li><strong>Service fee:</strong> There’s a small 2–5% fee added for the financing service (we’ll use 5% to keep it simple).</li>
+                            <li><strong>The rest:</strong> They pay the remaining amount (including the fee) in monthly installments over 12 months.</li>
+                        </ul>
+                        <h4>For SaaS vendors <span class="text-secondary">(the software providers)</span></h4>
+                        <ul class="paper-list">
+                            <li><strong>What they get upfront:</strong> <em>Annualize</em> pays them 70–90% of the subscription price upfront (we’ll use 85% for this example).</li>
+                            <li><strong>The rest:</strong> They get the remaining 15% after 9 months, but only if the SMB doesn’t default on payments.</li>
+                            <li><strong>Commission:</strong> Vendors pay <em>Annualize</em> a 15–25% commission for setting up the deal and handling the financing.</li>
+                        </ul>
+                        <h4>For Annualize</h4>
+                        <ul class="paper-list">
+                            <li><strong>How we make money:</strong> Annualize earns the 2–5% service fee from SMBs and the 15–25% commission from vendors.</li>
+                            <li><strong>What they do:</strong> They finance the upfront payment to vendors and collect installments from SMBs.</li>
+                        </ul>
+
+                        <h2 id="business-economics">Business economics</h2>
+                        <h3>Capital efficiency</h3>
+                        <p class="paragraph">Because only 15 cents of every dollar we finance is out of pocket on Day 0, one dollar of equity lets us originate roughly <strong>$6.60</strong> in face-value loans. Funding 100 loans worth $100,000 therefore requires just <strong>$15,000</strong> of our own capital.</p>
+                        <h3>Cash-recycling flywheel</h3>
+                        <p class="paragraph">The Day-0 gap ($150 per $1,000) is fully repaid after the third monthly installment, so our initial $15,000 is back in hand within a quarter. We can redeploy it again every three months—<strong>four cycles per year—multiplying the impact of the same dollar of equity.</strong></p>
+                        <h3>Default-rate headroom</h3>
+                        <p class="paragraph">Across a 100-loan pool, early (no-payment) defaults can climb to roughly <strong>66.7%</strong> before they wipe out the Day-0 buffer; stay below that line and the portfolio still finishes in the black, breach it and each additional default begins eating principal.</p>
+                        <h3>Return on deployed cash</h3>
+                        <p class="paragraph">Each turn of that equity produces about one dollar of gross profit for every dollar put at risk, so a dollar that turns four times can generate up to 8 dollars in annual gross receipts (before defaults and processing costs).</p>
+
+                        <h2 id="how-it-works">How it works</h2>
+                        <p class="paragraph"><em>Annualize</em> seamlessly integrates its financing model directly into the <strong>SaaS checkout process</strong>, creating a frictionless experience for both customers and vendors. While the specifics of the financing arrangement aren’t overly complex, it’s built to bridge the gap between SMBs’ budget constraints and vendors’ preference for annual commitments—delivering a win-win solution.</p>
+                        <p class="paragraph">In short, <em>Annualize</em> helps SMBs to leverage the value of annual SaaS plans while helping vendors secure longer-term customer relationships, all through a simple, effective payment innovation.</p>
+                    </section>
+
+                    <div class="entry-break" aria-hidden="true"><span></span><span></span><span></span></div>
+
+                    <section class="paper-part" id="market" aria-labelledby="market-label">
+                        <p class="paper-label" id="market-label">Market dynamics</p>
+
+                        <h2 id="market-size">Market size</h2>
+                        <p class="paragraph">The market size is the total amount of money that small and medium-sized businesses (SMBs) in the U.S. could spend on Software as a Service (SaaS) subscriptions using our Buy Now, Pay Later (BNPL) solution for annual plans.</p>
+
+                        <figure class="paper-figure">
+                            <dl class="meter-list">
+                                <div class="meter-row">
+                                    <dt>U.S. SaaS market</dt>
+                                    <dd class="meter-value">$164B</dd>
+                                    <dd class="meter" aria-hidden="true"><span style="--share: 100%"></span></dd>
+                                </div>
+                                <div class="meter-row">
+                                    <dt>Spent by SMBs <span class="text-secondary">(40%)</span></dt>
+                                    <dd class="meter-value">$65.6B</dd>
+                                    <dd class="meter" aria-hidden="true"><span style="--share: 40%"></span></dd>
+                                </div>
+                                <div class="meter-row is-focus">
+                                    <dt>Through Annualize <span class="text-secondary">(20% of SMBs)</span></dt>
+                                    <dd class="meter-value">$13.1B</dd>
+                                    <dd class="meter" aria-hidden="true"><span style="--share: 8%"></span></dd>
+                                </div>
+                            </dl>
+                            <figcaption>U.S. SaaS spend in 2023. All three bars share one scale.</figcaption>
+                        </figure>
+
+                        <p class="paragraph">Here’s the breakdown:</p>
+                        <ul class="paper-list">
+                            <li><strong>The big SaaS pie:</strong> The U.S. SaaS market—the total amount spent on software subscriptions—is worth about $164 billion in 2023.</li>
+                            <li><strong>SMBs’ slice:</strong> SMBs make up 40% of that, which comes out to $65.6 billion. That’s how much SMBs are spending on SaaS right now.</li>
+                            <li><strong>Our piece of the slice:</strong> If just 20% of those SMBs decide to use Annualize to pay for their annual SaaS plans, that’s a $13.1 billion opportunity for Annualize in 2023. (That’s $65.6 billion × 20% = $13.1 billion.)</li>
+                        </ul>
+                        <p class="paragraph">So, the market size for <em>Annualize</em>—the total value of SaaS subscriptions that could flow through our BNPL service—is estimated at <strong>$13.1 billion in 2023</strong>. But the exciting part: this isn’t a static number. The SaaS market is growing fast, at about 18.7% per year. By 2030, that $65.6 billion SMB SaaS spend could balloon to $217.6 billion, and if 20% of SMBs keep using BNPL, our market opportunity could hit <strong>$43.5 billion</strong>. That’s a huge runway for growth!</p>
+                        <p class="paragraph">In short, the market size for Annualize is not only big—it’s <strong>$13.1 billion in 2023, growing to $43.5 billion by 2030</strong>—but it’s also moving fast, giving us plenty of room to make a splash. This is the foundation of our market dynamics, and it shows just how much opportunity is out there for us to capture!</p>
+
+                        <h2 id="why-now">Why now? The opportunity exists today</h2>
+                        <h3>Real-time underwriting</h3>
+                        <p class="paragraph">Open-banking APIs (Plaid, Stripe Treasury, Modern Treasury) let us vet an SMB’s cash flow in seconds. Five years ago this data was manual or expensive—making short-cycle financing uneconomical.</p>
+                        <h3>SaaS spend has reached critical mass</h3>
+                        <p class="paragraph">U.S. SaaS outlays have tripled since 2015 to <strong>$160B+</strong>; the 15–40% discount gap between monthly and annual plans is now big enough to support a dedicated lender.</p>
+                        <h3>SMB wallets are squeezed right now</h3>
+                        <p class="paragraph">Post-COVID inflation and 20%+ card APRs mean businesses can’t swallow a lump-sum annual bill, even if it saves money. That cash-flow pain simply wasn’t as acute in the low-rate 2010s.</p>
+                        <h3>Vendors suddenly need prepaid revenue</h3>
+                        <p class="paragraph">SaaS growth has slowed to ~15% YoY. Locking customers into annual plans is the fastest way to lift ARR and reduce <strong>4–5×</strong> higher monthly churn.</p>
+                        <h3>BNPL is now mainstream</h3>
+                        <p class="paragraph">Sixty percent of U.S. consumers have used pay-in-4, so decision-makers already trust the model—clearing a behavioral hurdle that blocked earlier B2B attempts.</p>
+                        <p class="paragraph"><strong>Bottom line:</strong> the rails, the scale, the cash-flow pain, and the vendor incentive all converged only in the last 2–3 years. That’s why this gap still exists—and why Annualize can close it today.</p>
+                    </section>
+
+                    <div class="entry-break" aria-hidden="true"><span></span><span></span><span></span></div>
+
+                    <section class="paper-part" id="competition" aria-labelledby="competition-label">
+                        <p class="paper-label" id="competition-label">Competition</p>
+
+                        <h2 id="how-we-stand-out">How we stand out from competitors</h2>
+                        <p class="paragraph">We overlap with both consumer BNPL giants and B2B financing platforms:</p>
+                        <ul class="paper-list">
+                            <li><strong>B2C BNPL players:</strong> Klarna, Affirm, Afterpay. They dominate point-of-sale financing but focus on retail shoppers, not businesses.</li>
+                            <li><strong>B2B revenue-finance startups:</strong> Pipe, Capchase, Clearco, Fundbox. They advance money based on invoices or MRR, mostly for mid-market companies, and often attach steep fees or equity warrants.</li>
+                        </ul>
+
+                        <h3>What do we understand that they don’t?</h3>
+                        <ol class="paper-list paper-steps">
+                            <li>
+                                <strong>We put less capital at risk upfront</strong>
+                                <p>Klarna and Affirm front ~70% of the purchase price on pay-in-4 deals. If a $100 item is bought with 25% down, they’re floating $71 on Day 0.</p>
+                                <p>In contrast, we only risk 15% of a SaaS contract up front—thanks to how our model splits buyer and vendor payments.</p>
+                            </li>
+                            <li>
+                                <strong>Our returns are stronger, even with slower capital velocity</strong>
+                                <p>Klarna recycles capital in 6 weeks; we do it in 3 months. But per dollar deployed, we earn 2× the gross revenue (pre-defaults) (vs. their ~1.5%).</p>
+                                <p>So even though we wait longer, our gross ROI per cycle is ~200% vs. their ~9% per cycle (or ~36% annualized).</p>
+                                <p>Less risk, better yield—we don’t need to move money as fast to win.</p>
+                            </li>
+                            <li>
+                                <strong>We’re purpose-built for SaaS, not general lending</strong>
+                                <p>We underwrite SMBs using live bank data, revenue signals, and risk-based payment terms. We also integrate with vendors to pause or suspend licenses if a customer stops paying. No other BNPL platform offers that kind of dynamic, software-native control.</p>
+                            </li>
+                        </ol>
+
+                        <h3>Why this matters</h3>
+                        <p class="paragraph">We’ve designed Annualize to be safer and more profitable for vendors by reducing Day 0 exposure by ~4× and using deeper, SaaS-specific credit signals.</p>
+                    </section>
+
+                    <div class="entry-break" aria-hidden="true"><span></span><span></span><span></span></div>
+
+                    <section class="paper-part" id="vision" aria-labelledby="vision-label">
+                        <p class="paper-label" id="vision-label">Vision &amp; mission</p>
+
+                        <h2 id="our-vision">Our vision: making subscriptions affordable for everyone</h2>
+                        <p class="paragraph">Annualize wants to change how people and businesses pay for subscriptions. Normally, if you want the big discount that comes with an annual plan—whether it’s for software, a gym membership, or a streaming service—you have to pay the full amount upfront. But not everyone can afford that, or they just don’t want to shell out all that cash at once. That’s where Annualize steps in with a “buy now, pay later” (BNPL) solution. We let you get the annual plan and its savings, but pay for it in smaller monthly chunks instead.</p>
+                        <p class="paragraph">Think of it like how BNPL works when you buy clothes or a new phone—you don’t pay everything upfront, you spread it out over time. Annualize is bringing that same idea to subscriptions, and we’re starting with businesses, then moving to freelancers, and eventually helping everyday people.</p>
+
+                        <h3>Three markets, one big plan</h3>
+                        <p class="paragraph">We’re rolling this out step by step, targeting three groups:</p>
+                        <ol class="paper-list paper-steps">
+                            <li>
+                                <strong>Companies <span class="text-secondary">(starting with SMBs)</span></strong>
+                                <p>Small and medium-sized businesses (SMBs) rely on software—like tools for accounting, marketing, or team management—to run smoothly. These tools often cost less if you pay for a whole year upfront, sometimes saving up to 40%. But not every business has the cash to do that. Annualize lets them lock in the annual plan and pay monthly instead. This saves them money and keeps their cash flow steady, while the software companies get more annual customers. Win-win!</p>
+                            </li>
+                            <li>
+                                <strong>Freelancers <span class="text-secondary">(next up)</span></strong>
+                                <p>Later, we’ll bring this to freelancers—people like graphic designers, writers, or consultants who need pro tools to do their jobs. These tools can be pricey, especially upfront. With Annualize, freelancers can get the annual discount on software they need without dropping a big lump sum, making it easier to grow their business.</p>
+                            </li>
+                            <li>
+                                <strong>Everyday people <span class="text-secondary">(down the line)</span></strong>
+                                <p>Eventually, we’ll expand to regular folks. Imagine you want a streaming service, a gym membership, or even a meal kit subscription. Annual plans are cheaper, but paying $120 upfront might sting. Annualize will let you grab that annual deal and pay something like $10 a month instead. You save money, and it’s easier on your wallet.</p>
+                            </li>
+                        </ol>
+
+                        <h3>Why this matters: a huge opportunity</h3>
+                        <p class="paragraph">This isn’t just a small idea—it’s a chance to build a <em>multi</em>-billion dollar company. The software market for SMBs in the U.S. alone is worth $164 billion, with those businesses spending $65.6 billion on subscriptions every year. Add in freelancers and everyday consumers, and the potential grows even bigger. Subscriptions are everywhere, and Annualize is tapping into that by making them more affordable for everyone.</p>
+
+                        <h3>The big picture</h3>
+                        <p class="paragraph">Our vision is simple: make annual subscription plans something anyone can afford, no matter who they are. We’re starting with companies, expanding to freelancers, and then reaching normal people like you and me. It’s a clear, step-by-step plan to help millions save money and to position Annualize as a leader in the “buy now, pay later” world for <em>subscriptions</em>. With the right team and focus, we’re on track to turn this into a massive, game-changing business.</p>
+                    </section>
+
+                    <footer class="paper-end">
+                        <a class="entry-link" href="/timeline/#annualize">← Back to the timeline</a>
+                        <a class="entry-link" href="../../assets/annualize/white-paper.pdf" target="_blank" rel="noopener">Original PDF ↗</a>
+                    </footer>
+                </article>
+            </div>
+        </div>
+
+        <div class="divider-container">
+            <div class="divider-line"></div>
+        </div>
+
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <a href="https://x.com/BFayyumi" target="_blank" rel="noopener noreferrer">X</a>
+                    <a href="https://www.linkedin.com/in/bfayyumi/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="mailto:b@fayyumi.com">Email</a>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

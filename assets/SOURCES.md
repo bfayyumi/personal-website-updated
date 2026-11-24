@@ -10,3 +10,9 @@ Book preview images
 - hands/adam.webp, hands/god.webp: The hands from the same public-domain photograph of The Creation of Adam, cropped, feathered into an oval and split into two layers at the gap between the fingertips.
 
 These covers identify representative editions; they do not imply a specific translation was read. Publisher cover artwork remains the property of its respective rights holders.
+
+Annualize white paper
+=====================
+
+- annualize/white-paper.pdf: the Annualize white paper (last updated May 7, 2025), exported from Notion. The only change from the export is that the "Annualize Business Model" link no longer points to the private Notion page.
+- annualize/white-paper.jpg: the top of the PDF's first page, rendered at 150 dpi, cropped and resized to 480px for the timeline's hover preview.

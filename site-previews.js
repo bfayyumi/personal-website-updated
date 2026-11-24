@@ -1,4 +1,5 @@
 // Hovering a site link shows a screenshot of that site, in the same card as the book covers on the home page.
+// The white paper link shows the top of its first page instead.
 (() => {
     const preview = document.querySelector('#site-preview');
     if (!preview) return;
@@ -7,7 +8,8 @@
     const caption = preview.querySelector('figcaption');
     const sites = {
         aurify: { src: '../assets/sites/aurify.jpg', alt: 'The Aurify homepage', caption: 'getaurify.com' },
-        nihilo: { src: '../assets/sites/nihilo.jpg', alt: 'The Nihilo homepage', caption: 'trynihilo.com' }
+        nihilo: { src: '../assets/sites/nihilo.jpg', alt: 'The Nihilo homepage', caption: 'trynihilo.com' },
+        annualize: { src: '../assets/annualize/white-paper.jpg', alt: 'The first page of the Annualize white paper', caption: 'Annualize white paper, May 2025', page: true }
     };
     let active = null;
     let revision = 0;
@@ -46,6 +48,7 @@
         active = link;
         const current = ++revision;
         preview.classList.remove('is-visible');
+        preview.classList.toggle('is-page', Boolean(site.page));
         image.src = site.src;
         image.alt = site.alt;
         caption.textContent = site.caption;
