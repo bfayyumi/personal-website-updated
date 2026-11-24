@@ -310,18 +310,57 @@ body {
     list-style: none;
 }
 
-/* Lines wait hidden until timeline.js writes them in with the home page's fade. */
-.reveal-on-scroll .timeline .entry-years,
-.reveal-on-scroll .timeline .entry-head,
-.reveal-on-scroll .timeline .paragraph,
-.reveal-on-scroll .timeline .entry-link,
-.reveal-on-scroll .timeline .entry-break {
+/* The first screen waits hidden until timeline.js writes it in with the home page's fade. */
+.write-in .timeline .entry-years,
+.write-in .timeline .entry-head,
+.write-in .timeline .paragraph,
+.write-in .timeline .entry-link,
+.write-in .timeline .entry-break {
     opacity: 0;
     transform: translateY(10px);
 }
 
-.reveal-on-scroll .timeline .is-written {
+.write-in .timeline .is-written {
     animation: fadeInUp 0.6s ease forwards;
+}
+
+.write-in .timeline .is-shown {
+    opacity: 1;
+    transform: none;
+}
+
+/* Further down, lines rise out of a soft fade at the bottom of the screen as you scroll, one line at a time. */
+.timeline-page::after {
+    content: '';
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 900;
+    height: 140px;
+    background: linear-gradient(
+        to bottom,
+        rgb(255 255 255 / 0%) 0%,
+        rgb(255 255 255 / 45%) 40%,
+        rgb(255 255 255 / 85%) 72%,
+        var(--bg-color) 100%
+    );
+    pointer-events: none;
+}
+
+/* Room below the last line, so the end of the page can scroll clear of the fade. */
+.timeline-page .home {
+    padding-bottom: 140px;
+}
+
+@media (max-width: 768px) {
+    .timeline-page::after {
+        height: 110px;
+    }
+
+    .timeline-page .home {
+        padding-bottom: 110px;
+    }
 }
 
 .entry-head {
@@ -542,13 +581,13 @@ body {
 
 /* A page loaded ahead of time holds its fade until it is actually shown. */
 .is-prerendering .fadeInUp,
-.is-prerendering.reveal-on-scroll .timeline .is-written {
+.is-prerendering.write-in .timeline .is-written {
     animation-play-state: paused;
 }
 
 /* Coming from another page of the site, the lines still write in, just quicker. */
 .from-site .fadeInUp,
-.from-site.reveal-on-scroll .timeline .is-written {
+.from-site.write-in .timeline .is-written {
     animation-duration: 0.4s;
 }
 .from-site .hero-container-wrapper .paragraph:nth-child(2) { animation-delay: 0.025s; }
