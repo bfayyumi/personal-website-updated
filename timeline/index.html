@@ -6,16 +6,16 @@
     <title>Timeline - Bader Fayyumi</title>
     <meta name="description" content="Everything Bader Fayyumi has worked on, in order: dropshipping, Twitter, cFlow, Annualize, Aurify and Nihilo.">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-    <link rel="stylesheet" href="../styles.css?v=20261124-6">
+    <link rel="stylesheet" href="../styles.css?v=20261124-7">
     <script src="../nav-hand.js?v=20261124-6" defer></script>
     <script>
-        // Hide the first screen of the timeline before first paint so timeline.js can write it in; without it everything simply shows.
+        // Hide the first screen of the timeline before first paint so write-in.js can write it in; without it everything simply shows.
         if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
             document.documentElement.classList.add('write-in');
         }
     </script>
-    <script src="../timeline.js?v=20261124-6" defer></script>
-    <script src="../site-previews.js?v=20261124-6" defer></script>
+    <script src="../write-in.js?v=20261124-7" defer></script>
+    <script src="../site-previews.js?v=20261124-7" defer></script>
     <script>
         // Visits from another page of the site write in faster, and a page loaded ahead of time waits to animate until it's shown.
         (() => {
@@ -29,11 +29,11 @@
             }
         })();
     </script>
-    <!-- Load the other pages as soon as the visitor points at them in the nav, so switching is instant. -->
+    <!-- Load the other pages, and the white paper, as soon as the visitor points at them, so switching is instant. -->
     <script type="speculationrules">
     {
         "prefetch": [{ "where": { "selector_matches": ".nav-container a" }, "eagerness": "eager" }],
-        "prerender": [{ "where": { "selector_matches": ".nav-container a" }, "eagerness": "moderate" }]
+        "prerender": [{ "where": { "selector_matches": ".nav-container a, .entry-link:not([target])" }, "eagerness": "moderate" }]
     }
     </script>
 </head>
@@ -115,7 +115,7 @@
 
                     <li class="entry-break" aria-hidden="true"><span></span><span></span><span></span></li>
 
-                    <li class="entry">
+                    <li class="entry" id="annualize">
                         <p class="entry-years">2025</p>
                         <header class="entry-head">
                             <img class="entry-logo entry-logo-fill" src="../assets/logos/annualize.png" alt="" width="32" height="32">
@@ -126,6 +126,7 @@
                         </header>
                         <p class="paragraph">I was paying a lot for software. Annual plans are often 20–40% cheaper, but you have to pay the whole year upfront. Annualize covered that invoice, so startups could get the annual price without paying it all at once.</p>
                         <p class="paragraph">We applied to YC several times and talked to a lot of founders. It became clear it would take a long time before it made money, and not all of us were ready to build something like that. After about six months, we moved on.</p>
+                        <a class="entry-link" data-site="annualize" href="annualize/">Read our white paper →</a>
                     </li>
 
                     <li class="entry-break" aria-hidden="true"><span></span><span></span><span></span></li>

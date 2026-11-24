@@ -1,12 +1,20 @@
-// Writes the first screen of the timeline in line by line, like the home page.
-// Everything further down is simply there when you scroll to it.
+// Writes the first screen of a long page in line by line, like the home page.
+// Used by the timeline and the white paper; everything further down is simply there when you scroll to it.
 (() => {
     const root = document.documentElement;
     if (!root.classList.contains('write-in')) return;
 
     // Coming from another page of the site, the same writing just runs twice as fast.
     const pace = root.classList.contains('from-site') ? 0.5 : 1;
-    const lines = document.querySelectorAll('.timeline .entry-years, .timeline .entry-head, .timeline .paragraph, .timeline .entry-link, .timeline .entry-break');
+    const lines = document.querySelectorAll([
+        '.timeline .entry-years',
+        '.timeline .entry-head',
+        '.timeline .paragraph',
+        '.timeline .entry-link',
+        '.timeline .entry-break',
+        '.paper > :not(.paper-part)',
+        '.paper-part > *'
+    ].join(', '));
     let order = 0;
 
     lines.forEach(line => {

@@ -310,21 +310,25 @@ body {
     list-style: none;
 }
 
-/* The first screen waits hidden until timeline.js writes it in with the home page's fade. */
+/* The first screen waits hidden until write-in.js writes it in with the home page's fade. */
 .write-in .timeline .entry-years,
 .write-in .timeline .entry-head,
 .write-in .timeline .paragraph,
 .write-in .timeline .entry-link,
-.write-in .timeline .entry-break {
+.write-in .timeline .entry-break,
+.write-in .paper > :not(.paper-part),
+.write-in .paper-part > * {
     opacity: 0;
     transform: translateY(10px);
 }
 
-.write-in .timeline .is-written {
+.write-in .timeline .is-written,
+.write-in .paper .is-written {
     animation: fadeInUp 0.6s ease forwards;
 }
 
-.write-in .timeline .is-shown {
+.write-in .timeline .is-shown,
+.write-in .paper .is-shown {
     opacity: 1;
     transform: none;
 }
@@ -466,6 +470,212 @@ body {
     width: 300px;
 }
 
+/* The top of a document page reads better a little narrower. */
+.book-preview.is-site.is-page {
+    width: 240px;
+}
+
+/* White paper: the timeline's look, set as a long read. */
+.paper strong {
+    font-weight: 700;
+}
+
+.paper-quote {
+    margin-top: 28px;
+    padding-left: 16px;
+    border-left: 2px solid var(--text-primary);
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 22px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 30px;
+}
+
+.paper-label {
+    margin-bottom: 10px;
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 20px;
+}
+
+/* Wide screens: the part you're in hangs in the left margin, like the years on the timeline. */
+@media (min-width: 1280px) {
+    .paper-label {
+        position: sticky;
+        top: 88px;
+        height: 0;
+        width: 140px;
+        margin: 0 0 0 -180px;
+        text-align: right;
+        translate: 0 7px;
+    }
+}
+
+.paper h2 {
+    margin: 44px 0 12px;
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 24px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 30px;
+    scroll-margin-top: 24px;
+}
+
+.paper-label + h2 {
+    margin-top: 0;
+}
+
+.paper h3 {
+    margin: 28px 0 8px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.paper h2 + h3 {
+    margin-top: 16px;
+}
+
+.paper h4 {
+    margin: 20px 0 8px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.paper h3 + h4 {
+    margin-top: 8px;
+}
+
+.paper-list {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.paper-list:last-child {
+    margin-bottom: 0;
+}
+
+.paper-list > li {
+    position: relative;
+    padding-left: 22px;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.paper-list > li + li {
+    margin-top: 12px;
+}
+
+/* Bullets are the same small squares that separate the timeline's entries. */
+ul.paper-list > li::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 6px;
+    width: 4px;
+    height: 4px;
+    background-color: #b4b4b4;
+}
+
+.paper-steps {
+    counter-reset: step;
+}
+
+.paper-steps > li {
+    counter-increment: step;
+    padding-left: 28px;
+}
+
+.paper-steps > li + li {
+    margin-top: 20px;
+}
+
+.paper-steps > li::before {
+    content: counter(step);
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: var(--text-secondary);
+    font-variant-numeric: tabular-nums;
+}
+
+.paper-steps strong {
+    display: block;
+    margin-bottom: 4px;
+}
+
+.paper-steps strong .text-secondary {
+    font-weight: 500;
+}
+
+.paper-steps p + p {
+    margin-top: 8px;
+}
+
+/* Market size: a name, a figure and a bar per row, every bar on one scale. */
+.paper-figure {
+    margin: 4px 0 24px;
+    padding: 20px;
+    border: 1px solid var(--divider-color);
+    border-radius: 12px;
+}
+
+.meter-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.meter-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 8px 16px;
+    align-items: baseline;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.meter-value {
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+}
+
+.meter {
+    grid-column: 1 / -1;
+    height: 8px;
+    border-radius: 4px;
+    background-color: #efefef;
+    overflow: hidden;
+}
+
+.meter span {
+    display: block;
+    width: var(--share);
+    height: 100%;
+    border-radius: 4px;
+    background-color: #a3a3a3;
+}
+
+.meter-row.is-focus .meter span {
+    background-color: var(--active-color);
+}
+
+.paper-figure figcaption {
+    margin-top: 16px;
+    color: var(--text-secondary);
+    font-size: 12.5px;
+    line-height: 18px;
+}
+
+.paper-end {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 8px 16px;
+    margin-top: 48px;
+}
+
 /* Creation of Adam: the hands close the gap as you reach the end of the page. */
 .reach {
     --reach: 0;
@@ -547,13 +757,15 @@ body {
 
 /* A page loaded ahead of time holds its fade until it is actually shown. */
 .is-prerendering .fadeInUp,
-.is-prerendering.write-in .timeline .is-written {
+.is-prerendering.write-in .timeline .is-written,
+.is-prerendering.write-in .paper .is-written {
     animation-play-state: paused;
 }
 
 /* Coming from another page of the site, the lines still write in, just quicker. */
 .from-site .fadeInUp,
-.from-site.write-in .timeline .is-written {
+.from-site.write-in .timeline .is-written,
+.from-site.write-in .paper .is-written {
     animation-duration: 0.4s;
 }
 .from-site .hero-container-wrapper .paragraph:nth-child(2) { animation-delay: 0.025s; }
