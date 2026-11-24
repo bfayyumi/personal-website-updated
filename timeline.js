@@ -9,10 +9,12 @@
     const observer = new IntersectionObserver(entries => {
         const shown = entries.filter(entry => entry.isIntersecting).map(entry => entry.target);
         // Same rhythm as the home page: a short pause, then each line 50ms after the one before.
-        const start = firstBatch ? 0.1 : 0;
+        // Coming from another page of the site, the same writing just runs twice as fast.
+        const pace = root.classList.contains('from-site') ? 0.5 : 1;
+        const start = firstBatch ? 0.1 * pace : 0;
         firstBatch = false;
         shown.forEach((line, i) => {
-            line.style.animationDelay = `${(start + i * 0.05).toFixed(2)}s`;
+            line.style.animationDelay = `${(start + i * 0.05 * pace).toFixed(3)}s`;
             line.classList.add('is-written');
             observer.unobserve(line);
         });

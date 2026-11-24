@@ -6,16 +6,36 @@
     <title>Timeline - Bader Fayyumi</title>
     <meta name="description" content="Everything Bader Fayyumi has worked on, in order: dropshipping, Twitter, cFlow, Annualize, Aurify and Nihilo.">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-    <link rel="stylesheet" href="../styles.css?v=20261124-3">
-    <script src="../nav-hand.js?v=20261124-3" defer></script>
+    <link rel="stylesheet" href="../styles.css?v=20261124-4">
+    <script src="../nav-hand.js?v=20261124-4" defer></script>
     <script>
         // Hide the timeline lines before first paint so timeline.js can write them in; without it they simply show.
         if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
             document.documentElement.classList.add('reveal-on-scroll');
         }
     </script>
-    <script src="../timeline.js?v=20261124-3" defer></script>
-    <script src="../site-previews.js?v=20261124-3" defer></script>
+    <script src="../timeline.js?v=20261124-4" defer></script>
+    <script src="../site-previews.js?v=20261124-4" defer></script>
+    <script>
+        // Visits from another page of the site write in faster, and a page loaded ahead of time waits to animate until it's shown.
+        (() => {
+            const root = document.documentElement;
+            try {
+                if (document.referrer && new URL(document.referrer).origin === location.origin) root.classList.add('from-site');
+            } catch {}
+            if (document.prerendering) {
+                root.classList.add('is-prerendering');
+                document.addEventListener('prerenderingchange', () => root.classList.remove('is-prerendering'), { once: true });
+            }
+        })();
+    </script>
+    <!-- Load the other pages as soon as the visitor points at them in the nav, so switching is instant. -->
+    <script type="speculationrules">
+    {
+        "prefetch": [{ "where": { "selector_matches": ".nav-container a" }, "eagerness": "eager" }],
+        "prerender": [{ "where": { "selector_matches": ".nav-container a" }, "eagerness": "moderate" }]
+    }
+    </script>
 </head>
 <body>
     <nav class="nav-container">
@@ -23,10 +43,10 @@
         <a href="/" class="nav-item-row">
             <span class="nav-link">Home</span>
         </a>
-        <a href="/thoughts" class="nav-item-row">
+        <a href="/thoughts/" class="nav-item-row">
             <span class="nav-link">Thoughts</span>
         </a>
-        <a href="/timeline" class="nav-item-row">
+        <a href="/timeline/" class="nav-item-row">
             <span class="active-indicator"></span>
             <span class="nav-link active">Timeline</span>
         </a>

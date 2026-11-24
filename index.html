@@ -8,10 +8,30 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@1&display=swap">
-    <link rel="stylesheet" href="styles.css?v=20261124-3">
-    <script src="nav-hand.js?v=20261124-3" defer></script>
-    <script src="reach.js?v=20261124-3" defer></script>
-    <script src="book-previews.js?v=20261124-3" defer></script>
+    <link rel="stylesheet" href="styles.css?v=20261124-4">
+    <script src="nav-hand.js?v=20261124-4" defer></script>
+    <script src="reach.js?v=20261124-4" defer></script>
+    <script src="book-previews.js?v=20261124-4" defer></script>
+    <script>
+        // Visits from another page of the site write in faster, and a page loaded ahead of time waits to animate until it's shown.
+        (() => {
+            const root = document.documentElement;
+            try {
+                if (document.referrer && new URL(document.referrer).origin === location.origin) root.classList.add('from-site');
+            } catch {}
+            if (document.prerendering) {
+                root.classList.add('is-prerendering');
+                document.addEventListener('prerenderingchange', () => root.classList.remove('is-prerendering'), { once: true });
+            }
+        })();
+    </script>
+    <!-- Load the other pages as soon as the visitor points at them in the nav, so switching is instant. -->
+    <script type="speculationrules">
+    {
+        "prefetch": [{ "where": { "selector_matches": ".nav-container a" }, "eagerness": "eager" }],
+        "prerender": [{ "where": { "selector_matches": ".nav-container a" }, "eagerness": "moderate" }]
+    }
+    </script>
 </head>
 <body>
     <nav class="nav-container">
@@ -20,10 +40,10 @@
             <span class="active-indicator"></span>
             <span class="nav-link active">Home</span>
         </a>
-        <a href="/thoughts" class="nav-item-row">
+        <a href="/thoughts/" class="nav-item-row">
             <span class="nav-link">Thoughts</span>
         </a>
-        <a href="/timeline" class="nav-item-row">
+        <a href="/timeline/" class="nav-item-row">
             <span class="nav-link">Timeline</span>
         </a>
     </nav>
