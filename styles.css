@@ -305,6 +305,162 @@ body {
     color: var(--text-secondary);
 }
 
+/* Timeline */
+.timeline {
+    list-style: none;
+}
+
+/* Lines wait hidden until timeline.js writes them in with the home page's fade. */
+.reveal-on-scroll .timeline .entry-years,
+.reveal-on-scroll .timeline .entry-head,
+.reveal-on-scroll .timeline .paragraph,
+.reveal-on-scroll .timeline .entry-link,
+.reveal-on-scroll .timeline .entry-break {
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.reveal-on-scroll .timeline .is-written {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.entry-head {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.entry-logo {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    padding: 5px;
+    border: 1px solid var(--divider-color);
+    border-radius: 8px;
+    background-color: #fafafa;
+    object-fit: contain;
+}
+
+.entry-logo-mono {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1;
+}
+
+/* Logos that come on their own square background fill the tile edge to edge. */
+.entry-logo-fill {
+    padding: 0;
+    object-fit: cover;
+}
+
+/* A wide wordmark gets the full tile width so the letters stay readable. */
+.entry-logo-wordmark {
+    padding: 0 2px;
+    background-color: #fff;
+}
+
+.entry-name {
+    flex: 1;
+    min-width: 0;
+}
+
+.entry-title {
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 500;
+    margin-top: 1px;
+}
+
+.entry-kind,
+.entry-years {
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--text-secondary);
+}
+
+.entry-kind {
+    margin-top: 1px;
+}
+
+.entry-years {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 10px;
+    font-variant-numeric: tabular-nums;
+}
+
+/* Marks where the story is now. */
+.now-dot {
+    flex-shrink: 0;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #3f9b54;
+    animation: now-pulse 2.4s ease-out infinite;
+}
+
+@keyframes now-pulse {
+    0% { box-shadow: 0 0 0 0 rgb(63 155 84 / 45%); }
+    70%, 100% { box-shadow: 0 0 0 6px rgb(63 155 84 / 0%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .now-dot {
+        animation: none;
+    }
+}
+
+/* Wide screens: the years hang in the left margin and stay in view while you read that entry. */
+@media (min-width: 1280px) {
+    .entry-years {
+        position: sticky;
+        top: 88px;
+        height: 0;
+        width: 140px;
+        margin: 0 0 0 -180px;
+        justify-content: flex-end;
+        translate: 0 6px;
+    }
+}
+
+.entry-link {
+    display: inline-block;
+    font-size: 14px;
+    line-height: 20px;
+    color: #2A5EC0;
+    text-decoration: none;
+    transition: opacity 0.15s ease;
+}
+
+.entry-link:hover {
+    opacity: 0.7;
+}
+
+/* Three square dots between entries. */
+.entry-break {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 40px 0;
+}
+
+.entry-break span {
+    width: 4px;
+    height: 4px;
+    background-color: #c8c8c8;
+}
+
+/* Site previews reuse the book preview card, sized for a screenshot. */
+.book-preview.is-site {
+    width: 300px;
+}
+
 /* Creation of Adam: the hands close the gap as you reach the end of the page. */
 .reach {
     --reach: 0;
