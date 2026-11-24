@@ -1,5 +1,5 @@
 // Writes the first screen of the timeline in line by line, like the home page.
-// Everything further down is already there; the soft fade at the bottom of the screen reveals it as you scroll.
+// Everything further down is simply there when you scroll to it.
 (() => {
     const root = document.documentElement;
     if (!root.classList.contains('write-in')) return;

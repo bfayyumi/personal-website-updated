@@ -329,40 +329,6 @@ body {
     transform: none;
 }
 
-/* Further down, lines rise out of a soft fade at the bottom of the screen as you scroll, one line at a time. */
-.timeline-page::after {
-    content: '';
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 900;
-    height: 140px;
-    background: linear-gradient(
-        to bottom,
-        rgb(255 255 255 / 0%) 0%,
-        rgb(255 255 255 / 45%) 40%,
-        rgb(255 255 255 / 85%) 72%,
-        var(--bg-color) 100%
-    );
-    pointer-events: none;
-}
-
-/* Room below the last line, so the end of the page can scroll clear of the fade. */
-.timeline-page .home {
-    padding-bottom: 140px;
-}
-
-@media (max-width: 768px) {
-    .timeline-page::after {
-        height: 110px;
-    }
-
-    .timeline-page .home {
-        padding-bottom: 110px;
-    }
-}
-
 .entry-head {
     display: flex;
     align-items: flex-start;
